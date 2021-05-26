@@ -69,12 +69,13 @@ function clean (test) {
   if (err instanceof Error) {
     err = errorJSON(err)
   }
-
   return {
     title: test.title,
     fullTitle: test.fullTitle(),
+    file: test.file,
     duration: test.duration,
     currentRetry: test.currentRetry(),
+    speed: test.speed,
     err: cleanCycles(err)
   }
 }
